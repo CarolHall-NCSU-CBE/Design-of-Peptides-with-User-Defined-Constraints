@@ -1,4 +1,4 @@
-# Design-of-Self-Assembling-Peptides-with-User-Defined-Constraints
+# Computational-Design-of-Self-Assembling-Peptides-with-User-Defined-Constraints
 Data for Design of Self-Assembling Peptides with User-Defined Constraints
 
 This repository contains the data associated with the paper "Design of Self-Assembling Peptides with User-Defined Constraints" (H. Wang et al.), submitted to Protein Science.
