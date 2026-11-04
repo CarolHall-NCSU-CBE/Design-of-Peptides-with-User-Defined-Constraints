@@ -77,3 +77,39 @@ Example output (without column headers):
  201.25000    19.66302        83       306         0        0.73214
 ...
 ```
+
+#### 2. Asphericity Analysis
+
+Asphericity measures the shape of a peptide chain. A value close to 0 indicates a spherical shape, while a value close to 1 indicates a rod-like shape.
+
+##### a. Run the analysis notebook
+
+An example Jupyter notebook, `asphericity.ipynb`, is provided along with DMD/PRIME20 simulation data for the peptide `A3C-0001-MTCTAINVNTMVYN` at three temperatures (316, 328, and 340 K).
+
+Only the `run0034.pdb` file from each simulation folder is needed for the analysis. This file contains the coarse-grained coordinates of the peptides.
+
+Open and run `asphericity.ipynb` to calculate the asphericity of each peptide chain.
+
+##### b. Output
+
+**Asphericities of individual peptide chains:**
+
+```text
+T          316        328        340
+chain_id
+1          0.270868   0.595984   0.488692
+2          0.285454   0.551431   0.221589
+3          0.288832   0.649227   0.330999
+4          0.514715   0.295888   0.443846
+5          0.625560   0.603400   0.692324
+6          0.532523   0.291680   0.615608
+...
+```
+
+**Average asphericity and standard deviation for all peptide chains in each PDB file:**
+
+```text
+Temperature = 316 K, Asphericity = 0.4595682344297584, STD = 0.135975148389185
+Temperature = 328 K, Asphericity = 0.5266465996508205, STD = 0.18498860298533346
+Temperature = 340 K, Asphericity = 0.5007351668650661, STD = 0.14786279922481083
+```
