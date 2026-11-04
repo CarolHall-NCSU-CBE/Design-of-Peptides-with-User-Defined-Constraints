@@ -25,3 +25,49 @@ For each temperature, the result includes the (1) final structure ('run0034.pdb'
 ### /MD simulations/
 This directory contains atomistic MD simulation results for Pep-1 to Pep-12 at T = 310.
 Each folder includes (1) a final structure file, (2) RMSD change vs. time ('rmsd-mass.txt'), (3) secondary structure change vs. time ('secondary structure.txt').
+
+### /Analysis code/
+# Beta-Sheet Content Analysis
+
+## 1. Compile the code
+
+On an HPC system, run the following commands:
+
+```bash
+module load PrgEnv-intel
+ifort -o bsheet_content bsheet_v3.f90
+```
+
+> **Note:** Check whether the Intel Fortran compiler is available on your HPC system. The module name may differ between systems.
+
+This compiles `bsheet_v3.f90` into the executable `bsheet_content`.
+
+## 2. Run the analysis
+
+Navigate to a DMD/PRIME20 simulation folder and run the executable:
+
+```bash
+bsheet_path="/path/to/location/of/bsheet_content"
+cd /path/to/DMDPRIME20_run
+"$bsheet_path"
+```
+
+## 3. Output
+
+The analysis generates a file named `bsheet_content.txt` in the simulation folder.
+
+The file contains the following columns:
+
+- `Collisions(Billion)`
+- `Time(microsecond)`
+- `Number of antiparallel residues`
+- `Number of parallel residues`
+- `Number of U-turns`
+- `beta-sheet content`
+
+Example output:
+
+```text
+Collisions(Billion)  Time(microsecond)  Number of antiparallel residues  Number of parallel residues  Number of U-turns  beta-sheet content
+0.10000              0.00598            0                                0                            0                  0.00000
+```
